@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #ddf5dc;
+}
+
+.bg-overlay {
+  background-image: url("background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1; /* <-- Change this value for transparency (0.0 to 1.0) */
+  z-index: -1;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding-left: 50px;
+}
+
+.contents {
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  background-color: #4caf50;
+  box-shadow: 3px, 5px, 5px rgba (0, 0, 0, 0.1);
+}
+
+.nav-item:hover {
+  background-color: #4caf50;
+}
+
+.nav-item {
+  color: rgb(252, 252, 252);
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-link {
+  color: rgb(244, 244, 244);
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sections {
+  text-align: center;
+}
+nav li:first-child {
+  margin-right: auto;
+}
+
+.Sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(76, 175, 79, 0.468);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba (0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.Sidebar li {
+  width: 100%;
+}
+
+.Sidebar a {
+  width: 100%;
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+}
+
+.carousel img {
+  height: 500px;
+  width: 500px;
+  align-items: center;
+  float: center;
+}
+
+.carousel-item {
+  align-items: center;
+  float: center;
+}
+
+/* Card styles */
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+/*DROPDOOOWWNNN*/
+
+.dropbtn {
+  color: white;
+  background-color: #45a049;
+  text-decoration: none;
+  padding: 14px 20px;
+}
+
+.dropdown-item {
+  color: white;
+  background-color: #45a049;
+}
+
+.dropdown-item:hover {
+  background-color: #367c39;
+}
+
+.dropbtn:hover {
+  background: #367c39;
+  border-radius: 5px;
+}
+
+/*INPUTSS*/
+
+h1,
+h2 {
+  color: #4caf50;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(200, 234, 184, 0.555);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
+}
+
+.containers {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(200, 234, 184, 0.555);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.containersss {
+  width: 100%;
+  background-color: #45a049;
+}
+
+.containerssss {
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.footer {
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.login-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  align-items: center;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #45a049;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+
+.Sign {
+  width: 10%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Sign:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.menu-button {
+  display: block;
+}
+
+.signup-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+  .Sidebar {
+    width: 100%;
+  }
+}
+
+.side-design {
+  position: fixed;
+  top: 100px; /* adjust vertical placement */
+  right: 0; /* or use left: 0; for the left side */
+  width: 120px; /* resize as needed */
+  z-index: 999;
+  opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .login-container form input,
+  .login-container form button {
+    font-size: 14px;
+  }
+
+  .sign-btn {
+    width: 100%;
+  }
+}

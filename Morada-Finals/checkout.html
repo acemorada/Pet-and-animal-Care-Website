@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | SportFit</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #0a0f24;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .order-summary {
+      flex: 1;
+      padding-right: 30px;
+    }
+    .order-summary h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 12px 0;
+    }
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 15px;
+    }
+    .cart-info {
+      flex: 1;
+    }
+    .cart-info h4 {
+      margin: 0 0 5px 0;
+      font-size: 16px;
+      color: #0a0f24;
+    }
+    .cart-info p {
+      margin: 0;
+      color: #555;
+    }
+    .order-summary .total {
+      text-align: right;
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .checkout-form {
+      flex: 1;
+      padding-left: 30px;
+    }
+    .checkout-form h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .checkout-form input, .checkout-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .cta-btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #32a852;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cta-btn:hover {
+      background-color: #288e44;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div id="cart-items"></div>
+      <div class="total">
+        Total: ₱<span id="cart-total">0.00</span>
+      </div>
+    </div>
+
+    <!-- Checkout Form -->
+    <div class="checkout-form">
+      <h2>Checkout</h2>
+      <input type="text" id="full-name" value="Christian Ace Morada"  placeholder="Christian Ace Morada" required readonly />
+      <input type="email" id="email" value="Acemorada25@gmail.com" placeholder="Acemorada25@gmail.com" required readonly />
+      <input type="text" id="address" value="krus na Ligas, Quezon City" placeholder="Krus na Ligas, Quezon City" />
+      <input type="text" id="contact" value="0949464734" placeholder="09494642734" required readonly />
+      <select id="payment-method">
+        <option value="">Select Payment Method</option>
+        <option value="credit-card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="cashondelivery">Cash on delivery</option>
+      </select>
+      <button class="cta-btn" onclick="finalizeOrder()">Confirm Order</button>
+    </div>
+    
+
+  <script>
+    // Display Cart Items
+    function displayCart() {
+      const cart = JSON.parse(localStorage.getItem('checkoutCart')) || [];
+      const container = document.getElementById('cart-items');
+      let total = 0;
+      container.innerHTML = '';
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p>Your cart is currently empty.</p>';
+        document.getElementById('cart-total').textContent = '0.00';
+        return;
+      }
+
+      cart.forEach(item => {
+        const imgSrc = item.image || 'placeholder.jpg'; // fallback image
+        container.innerHTML += `
+          <div class="cart-item">
+            <img src="${imgSrc}" alt="${item.name}">
+            <div class="cart-info">
+              <h4>${item.name}</h4>
+              <p>₱${Number(item.price).toFixed(2)}</p>
+            </div>
+          </div>
+        `;
+        total += Number(item.price);
+      });
+
+      document.getElementById('cart-total').textContent = total.toFixed(2);
+    }
+
+    // Finalize Order
+    function finalizeOrder() {
+      const cart = JSON.parse(localStorage.getItem('checkoutCart')) || [];
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+
+      const name = document.getElementById('full-name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const payment = document.getElementById('payment-method').value;
+
+      if (!name || !email || !address || !payment) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      alert("Thank you for your order, " + name + "! Proceeding with payment...");
+      localStorage.removeItem('checkoutCart'); // clear cart after order
+      window.location.href = "thankyou.html"; // replace with your thank you page if needed
+    }
+
+    // Load cart on page load
+    document.addEventListener('DOMContentLoaded', displayCart);
+  </script>
+
+</body>
+</html>

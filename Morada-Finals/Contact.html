@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Contact Us</title>
+
+</head>
+<body>
+  <div class="bg-overlay"></div>
+  <div class="contents">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="containersss">
+        <a class="navbar-brand" href="#">Ace Pet Kingdom</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="pro.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact Us</a></li>
+          <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="userDropdown"></a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" onclick="logout()">Log Out</a></li>
+  </ul>
+</li>
+<li class="nav-item" id="loginNavItem">
+  <a class="nav-link" href="login.html">Log In</a>
+</li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>    
+
+
+      <br /><br /><br />
+    <div class="sections" id="contact">
+        <h2>🐾 Contact Us</h2>
+        <p>Have questions or need personalized advice? We're here to help!</p>
+        <p> <strong>Call us at:</strong> 09494642734</p>
+        <p> <strong>Owner Name:</strong> Christian Ace Morada</p>
+        <p> <strong>Email us at:</strong> Acemorada25@gmail.com</p>
+        <p> <strong>Visit us:</strong> at Brgy. Krus na Ligas Quezon City</p>
+        <p> <strong>Other Branches:</strong> Novaliches, Litex, Manggahan Quezon City</p>
+        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15440.707700309384!2d121.04357548316307!3d14.645896139572582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7766352597f%3A0x3ed6237b995a256d!2sKrus%20Na%20Ligas%2C%20Diliman%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1747409873187!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+        <a href="#" class="button">Get in Touch</a>
+    </div>
+    </div>
+<br><br><br><br><br><br><br>
+    <div class="footer">
+      <p>&copy; 2025 Pet Care. All Rights Reserved.</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+
+<script>
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    location.reload(); // Reload to reflect logout state
+  }
+
+  // Update navbar on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const user = localStorage.getItem("loggedInUser");
+    const userNavItem = document.getElementById("userNavItem");
+    const loginNavItem = document.getElementById("loginNavItem");
+    const userDropdown = document.getElementById("userDropdown");
+
+    if (user) {
+      loginNavItem.style.display = "none";
+      userNavItem.style.display = "block";
+      userDropdown.textContent = user;
+    } else {
+      loginNavItem.style.display = "block";
+      userNavItem.style.display = "none";
+    }
+  });
+</script>
+</div>    
+</body>
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Contact Us</title>
+    <style>
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #ddf5dc;
+        color: #333;
+        line-height: 1.6;
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .logo-container img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #ce590b;
+        box-shadow: 0 0 10px rgba(50, 168, 82, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .logo-container img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(50, 168, 82, 0.7);
+      }
+      .brand-name {
+        font-family: "Russo One", sans-serif;
+        font-size: 30px;
+        background: linear-gradient(45deg, #32a852, #ffffff);
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 3px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        animation: glow 2s infinite alternate;
+      }
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 5px #32a852, 0 0 10px #32a852;
+        }
+        to {
+          text-shadow: 0 0 20px #32a852, 0 0 30px #32a852;
+        }
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+      .nav-links a {
+        color: #f1f1f1;
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s ease;
+      }
+      .nav-links a:hover {
+        color: #32a852;
+      }
+      header h1 {
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      }
+      .container {
+        padding: 50px 20px;
+      }
+      .container h2 {
+        font-size: 36px;
+        color: #0a0f24;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+      .product-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .product-card h3 {
+        font-size: 22px;
+        margin: 20px 0;
+        color: #0a0f24;
+      }
+      .product-card p {
+        font-size: 16px;
+        padding: 0 20px 20px;
+        color: #555;
+      }
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+      .cta-section {
+        text-align: center;
+        margin-top: 40px;
+      }
+      .cta-btn {
+        padding: 12px 30px;
+        background-color: #32a852;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: 0.3s ease;
+        display: inline-block;
+        margin-top: 20px;
+      }
+      .cta-btn:hover {
+        background-color: #288e44;
+      }
+    
+        header h1 {
+          font-size: 36px;
+        }
+        .container h2 {
+          font-size: 28px;
+        }
+      .product-link {
+        text-decoration: none;
+        color: inherit;
+      }
+      .product-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        transition: 0.3s;
+        background-color: #fff;
+      }
+      .product-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+      }
+      .product-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      /* Add-to-Cart Button Style */
+      .add-to-cart-btn {
+        padding: 12px 20px;
+        background-color: #32a852;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-bottom: 20px;
+      }
+      .add-to-cart-btn:hover {
+        background-color: #288e44;
+      }
+    </style>
+
+    <script src="cart.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="containersss">
+        <a class="navbar-brand" href="#">Ace Pet Kingdom</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="pro.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact Us</a></li>
+          <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="userDropdown"></a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" onclick="logout()">Log Out</a></li>
+  </ul>
+</li>
+<li class="nav-item" id="loginNavItem">
+  <a class="nav-link" href="login.html">Log In</a>
+</li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>    
+
+    <div class="bg-overlay"></div>
+    <div class="contents"></div>
+    <main class="container">
+      <h2 style="color: #32a852; font-weight: bold">Pet Accessories</h2>
+
+      <div class="product-list">
+
+        <!-- Dog Collar -->
+        <div class="product-list">
+            <!-- Product Card -->
+            <div class="product-card">
+              <img src="collar.jpg" alt="Dog Collar" />
+              <h3>Dog Collar</h3>
+              <p style="color: #32a852; font-weight: bold">₱250.00</p>
+              
+              <!-- View More Button triggers Modal -->
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCollar">
+                View More
+              </button>
+            </div>
+          
+            <!-- Modal -->
+            <div class="modal fade" id="modalCollar" tabindex="-1" aria-labelledby="modalCollarLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalCollarLabel">Dog Collar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="collar.jpg" alt="Dog Collar" class="img-fluid mb-3" />
+                    <p><strong>Price:</strong> ₱250.00</p>
+                    <p>This dog collar is made from durable nylon and designed for comfort and safety. Perfect for all sizes of dogs.</p>
+                  </div>
+                  
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- Add to Cart button inside the modal -->
+                    <button
+                      class="btn btn-success add-to-cart-btn"
+                      data-name="Dog Collar"
+                      data-price="250.00"
+                      data-image="collar.jpg"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+         
+
+            <div class="product-list">
+            <!-- Pet Bowl Card -->
+            <div class="product-card">
+              <img src="petbowl.jpg" alt="Pet Bowl" />
+              <h3>Pet Bowl</h3>
+              <p style="color: #32a852; font-weight: bold">₱180.00</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPetBowl">
+                View More
+              </button>
+            </div>
+          
+            <div class="modal fade" id="modalPetBowl" tabindex="-1" aria-labelledby="modalPetBowlLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalPetBowlLabel">Pet Bowl</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  
+                  <div class="modal-body">
+                    <img src="petbowl.jpg" alt="Pet Bowl" class="img-fluid mb-3" />
+                    <p><strong>Price:</strong> ₱180.00</p>
+                    <p>Durable and easy-to-clean pet bowl, perfect for food or water. Non-slip base for safety.</p>
+                  </div>
+                  
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-success add-to-cart-btn" data-name="Pet Bowl" data-price="180.00" data-image="petbowl.jpg">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    
+          
+            <!-- Dog Leash Card -->
+            <div class="product-list">
+            <div class="product-card">
+              <img src="leash.jpg" alt="Dog Leash" />
+              <h3>Dog Leash</h3>
+              <p style="color: #32a852; font-weight: bold">₱200.00</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLeash">
+                View More
+              </button>
+            </div>
+          
+            <div class="modal fade" id="modalLeash" tabindex="-1" aria-labelledby="modalLeashLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+          
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalLeashLabel">Dog Leash</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  
+                  <div class="modal-body">
+                    <img src="leash.jpg" alt="Dog Leash" class="img-fluid mb-3" />
+                    <p><strong>Price:</strong> ₱200.00</p>
+                    <p>Sturdy and tangle-free leash made with high-quality nylon, ideal for daily walks.</p>
+                  </div>
+          
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-success add-to-cart-btn" data-name="Dog Leash" data-price="200.00" data-image="leash.jpg">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+          
+            <!-- Litterbox Card -->
+            <div class="product-list">
+            <div class="product-card">
+
+              <img src="litterbox.jpg" alt="Litterbox" />
+              <h3>Litterbox</h3>
+              <p style="color: #32a852; font-weight: bold">₱300.00</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLitterbox">
+                View More
+              </button>
+            </div>
+          
+            <div class="modal fade" id="modalLitterbox" tabindex="-1" aria-labelledby="modalLitterboxLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalLitterboxLabel">Litterbox</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+          
+                  <div class="modal-body">
+                    <img src="litterbox.jpg" alt="Litterbox" class="img-fluid mb-3" />
+                    <p><strong>Price:</strong> ₱300.00</p>
+                    <p>Spacious and easy-to-clean litterbox designed for cats. Comes with a detachable lid and odor control features.</p>
+                  </div>
+          
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-success add-to-cart-btn" data-name="Litterbox" data-price="300.00" data-image="litterbox.jpg">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+<!-- Catbag Card -->
+<div class="product-list">
+<div class="product-card">
+    <img src="Catbag.jpg" alt="Catbag" />
+    <h3>Catbag</h3>
+    <p style="color: #32a852; font-weight: bold">₱1,500.00</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCatbag">
+      View More
+    </button>
+  </div>
+  
+  <div class="modal fade" id="modalCatbag" tabindex="-1" aria-labelledby="modalCatbagLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCatbagLabel">Catbag</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <img src="Catbag.jpg" alt="Catbag" class="img-fluid mb-3" />
+          <p><strong>Price:</strong> ₱1,500.00</p>
+          <p>Comfortable and ventilated travel bag designed for cats. Features a clear bubble window for visibility and safety.</p>
+        </div>
+        
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success add-to-cart-btn" data-name="Catbag" data-price="1500.00" data-image="Catbag.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <!-- Catbed Card -->
+  <div class="product-list">
+  <div class="product-card">
+    <img src="Catbed.jpg" alt="Catbed" />
+    <h3>Catbed</h3>
+    <p style="color: #32a852; font-weight: bold">₱1,799.00</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCatbed">
+      View More
+    </button>
+  </div>
+  
+  <div class="modal fade" id="modalCatbed" tabindex="-1" aria-labelledby="modalCatbedLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCatbedLabel">Catbed</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <img src="Catbed.jpg" alt="Catbed" class="img-fluid mb-3" />
+          <p><strong>Price:</strong> ₱1,799.00</p>
+          <p>Soft and cozy cat bed with a cushioned base. Provides warmth and comfort for restful naps.</p>
+        </div>
+        
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success add-to-cart-btn" data-name="Catbed" data-price="1799.00" data-image="Catbed.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Bird Cage Card -->
+  <div class="product-list">
+  <div class="product-card">
+    <img src="birdcage.jpg" alt="Bird Cage" />
+    <h3>Bird Cage</h3>
+    <p style="color: #32a852; font-weight: bold">₱1,099.00</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBirdCage">
+      View More
+    </button>
+  </div>
+  
+  <div class="modal fade" id="modalBirdCage" tabindex="-1" aria-labelledby="modalBirdCageLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBirdCageLabel">Bird Cage</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <img src="birdcage.jpg" alt="Bird Cage" class="img-fluid mb-3" />
+          <p><strong>Price:</strong> ₱1,099.00</p>
+          <p>Spacious and secure bird cage made from rust-resistant metal. Includes perches and a feeder tray.</p>
+        </div>
+        
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success add-to-cart-btn" data-name="Bird Cage" data-price="1099.00" data-image="birdcage.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+        <br /><br />
+        <h2 style="color: #32a852; font-weight: bold">Pet Foods</h2>
+
+        <br /><br />
+<!-- WHISKAS -->
+<div class="product-card">
+    <img src="whiskas.jpg" alt="Whiskas" />
+    <h3>Whiskas</h3>
+    <p style="color: #32a852; font-weight: bold">₱2,199.00</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWhiskas">
+      View More
+    </button>
+  </div>
+  
+  <div class="modal fade" id="modalWhiskas" tabindex="-1" aria-labelledby="modalWhiskasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalWhiskasLabel">Whiskas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+          <img src="whiskas.jpg" alt="Whiskas" class="img-fluid mb-3" />
+          <p><strong>Price:</strong> ₱2,199.00</p>
+          <p>Whiskas dry cat food provides a complete and balanced diet for your cat with essential nutrients and flavors cats love.</p>
+        </div>
+  
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success add-to-cart-btn" data-name="Whiskas" data-price="2199.00" data-image="whiskas.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- PEDIGREE -->
+  <div class="product-card">
+    <img src="pedigree.jpg" alt="Pedigree" />
+    <h3>Pedigree</h3>
+    <p style="color: #32a852; font-weight: bold">₱2,199.00</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPedigree">
+      View More
+    </button>
+  </div>
+  
+  <div class="modal fade" id="modalPedigree" tabindex="-1" aria-labelledby="modalPedigreeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPedigreeLabel">Pedigree</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+          <img src="pedigree.jpg" alt="Pedigree" class="img-fluid mb-3" />
+          <p><strong>Price:</strong> ₱2,199.00</p>
+          <p>Pedigree dog food is rich in protein and vitamins, designed to support a dog’s overall health and immune system.</p>
+        </div>
+  
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success add-to-cart-btn" data-name="Pedigree" data-price="2199.00" data-image="pedigree.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- BIRD FOOD -->
+  <div class="product-card">
+    <img src="parrot.jpg" alt="Bird Food" />
+    <h3>Bird Food</h3>
+    <p style="color: #32a852; font-weight: bold">₱1,799.00</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBirdFood">
+      View More
+    </button>
+  </div>
+  
+  <div class="modal fade" id="modalBirdFood" tabindex="-1" aria-labelledby="modalBirdFoodLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBirdFoodLabel">Bird Food</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+          <img src="parrot.jpg" alt="Bird Food" class="img-fluid mb-3" />
+          <p><strong>Price:</strong> ₱1,799.00</p>
+          <p>Nutritionally balanced bird food ideal for parrots and other pet birds. Packed with seeds, grains, and essential vitamins.</p>
+        </div>
+  
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success add-to-cart-btn" data-name="Bird Food" data-price="1799.00" data-image="parrot.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      <div class="cta-section">
+        <a href="cart.html" class="cta-btn">View Cart</a>
+      </div>
+    </main>
+
+    <div class="footer">
+      <p>&copy; 2025 Pet Care. All Rights Reserved.</p>
+    </div>
+    </div>
+
+<script>
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    location.reload(); // Reload to reflect logout state
+  }
+
+  // Update navbar on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const user = localStorage.getItem("loggedInUser");
+    const userNavItem = document.getElementById("userNavItem");
+    const loginNavItem = document.getElementById("loginNavItem");
+    const userDropdown = document.getElementById("userDropdown");
+
+    if (user) {
+      loginNavItem.style.display = "none";
+      userNavItem.style.display = "block";
+      userDropdown.textContent = user;
+    } else {
+      loginNavItem.style.display = "block";
+      userNavItem.style.display = "none";
+    }
+  });
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

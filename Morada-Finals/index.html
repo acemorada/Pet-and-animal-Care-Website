@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap JavaScript (for navbar toggle and carousel) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Ace Pet Kingdom</title>
+  </head>
+  <body>
+
+        <!-- Burger Ka Sakin -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="containersss">
+        <a class="navbar-brand" href="#">Ace Pet Kingdom</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="pro.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+          <li class="nav-item"><a class="nav-link" href="#adoption">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact Us</a></li>
+          <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="userDropdown"></a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" onclick="logout()">Log Out</a></li>
+  </ul>
+</li>
+<li class="nav-item" id="loginNavItem">
+  <a class="nav-link" href="login.html">Log In</a>
+</li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>    
+
+    <div class="bg-overlay"></div>
+    <div class="contents"></div>
+
+
+    <div>
+      <h1>Welcome to Ace Pet Kingdom - Your Trusted Pet Care Resource!</h1>
+      <h2>Because Every Pet Deserves the Best Care</h2>
+
+      <div class="containers">
+        <h2>🐾 Featured Sections</h2>
+        <h3>1. Pet Care Guides</h3>
+        <p>
+          Not sure how to take care of your pet? Explore our comprehensive
+          guides:
+        </p>
+        <ul>
+          <li>
+            🐶 <strong>Dogs</strong> – Training, nutrition, grooming & more
+          </li>
+          <li>
+            🐱 <strong>Cats</strong> – Litter training, behavior tips, best
+            diets
+          </li>
+          <li>
+            🦜 <strong>Birds</strong> – Housing, feeding, and teaching tricks
+          </li>
+          <li>🐍 <strong>Reptiles</strong> – Creating the perfect habitat</li>
+          <li>
+            🐹 <strong>Small Pets</strong> – Rabbits, hamsters, guinea pigs &
+            more
+          </li>
+        </ul>
+        <a href="#" class="button">Explore Care Guides</a>
+      </div>
+    </div>
+
+    <br><br>
+    
+<!-- Side Decoration Image -->
+
+
+
+    <!-- Carousel -->
+  
+    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <img src="download.jpg" alt="Food Image 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="download (1).jpg" alt="Food Image 2" />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="Can Lizards Really Detach Their Tails_.jpg"
+            alt="Food Image 3"
+          />
+        </div>
+        <div class="carousel-item">
+          <img src="Top 10 Cutest Puppies _ ehow_com.jpg" alt="Food Image 3" />
+        </div>
+        <div class="carousel-item">
+          <img src="10 Tricks You Can Teach Your Cat.jpg" alt="Food Image 3" />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#recipeCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#recipeCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+<br><br>
+
+    <h2>Trending Now on Our Blog</h2>
+
+
+    <!-- Cards -->
+
+
+    <div class="container my-5">
+      <div class="row g-4">
+    
+        <!-- Cat's Diet -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="Can Cats Eat Hot Dogs_ The Answer Might Surprise You.jpg" class="card-img-top" alt="Cat's Diet" />
+            <div class="card-body">
+              <h5 class="card-title">Cat's Diet</h5>
+              <p class="card-text">How to Transition Your Cat to a New Diet</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCatDiet">View Blog</button>
+            </div>
+          </div>
+        </div>
+    
+        <div class="modal fade" id="modalCatDiet" tabindex="-1" aria-labelledby="modalCatDietLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCatDietLabel">Cat's Diet</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="Can Cats Eat Hot Dogs_ The Answer Might Surprise You.jpg" class="img-fluid mb-3" alt="Cat Diet" />
+                <p><strong>Topic:</strong> How to Transition Your Cat to a New Diet</p>
+                <p>Learn the safe way to introduce a new diet to your cat, how to avoid digestive issues, and signs to watch out for.</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-success">Make Appointment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Dog Tips -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="Interactive Dog Football Toy with Grab Tabs - 19cm _ Footprint.jpg" class="card-img-top" alt="Dog Tips" />
+            <div class="card-body">
+              <h5 class="card-title">Dog Tips</h5>
+              <p class="card-text">10 Fun Activities to Keep Your Dog Active Indoors</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDogTips">View Blog</button>
+            </div>
+          </div>
+        </div>
+    
+        <div class="modal fade" id="modalDogTips" tabindex="-1" aria-labelledby="modalDogTipsLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalDogTipsLabel">Dog Tips</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="Interactive Dog Football Toy with Grab Tabs - 19cm _ Footprint.jpg" class="img-fluid mb-3" alt="Dog Tips" />
+                <p><strong>Topic:</strong> 10 Fun Activities to Keep Your Dog Active Indoors</p>
+                <p>Keep your dog physically and mentally stimulated indoors with games, toys, and bonding activities.</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-success">Make Appointment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Senior Pet -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="Raça de Cachorro Old English Sheepdog.jpg" class="card-img-top" alt="Senior Pet" />
+            <div class="card-body">
+              <h5 class="card-title">Senior Pet</h5>
+              <p class="card-text">The Benefits of Adopting a Senior Pet</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSeniorPet">View Blog</button>
+            </div>
+          </div>
+        </div>
+    
+        <div class="modal fade" id="modalSeniorPet" tabindex="-1" aria-labelledby="modalSeniorPetLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalSeniorPetLabel">Senior Pet</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="Raça de Cachorro Old English Sheepdog.jpg" class="img-fluid mb-3" alt="Senior Pet" />
+                <p><strong>Topic:</strong> The Benefits of Adopting a Senior Pet</p>
+                <p>Discover why senior pets make loving, calm, and low-maintenance companions — and how to care for them properly.</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-success">Make Appointment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+<br><br>  
+<div class="container">
+  <h2>🐾 Join Our Pet-Loving Community!</h2>
+  <p>
+    Connect with other pet parents, share your pet’s story, and get
+    exclusive tips.
+  </p>
+  <a href="#" class="button">Sign Up Now</a>
+</div>
+<br><br>
+<div class="container">
+  <h2>🐾OUR HISTORY</h2>
+  <p>
+    Founded out of a deep love for animals, Ace Pet Kingdom
+    began as a small local pet sitting service in Krus na Ligas in 2004. Over the years,
+    our passion for pet health and happiness has grown into a full-service pet care platform 
+    dedicated to serving pet parents with compassion, reliability, and professionalism. 
+    From humble beginnings to becoming a trusted name in the pet care community, our journey
+    has always been guided by one goal: to treat every pet like family.
+  </p>
+</div>
+<br><br>
+<div class="containers">
+  <h2>🐾OUR CORE VALUES</h2>
+  <ul>
+    <li>📌 <strong>Compassion:</strong> We treat every animal with the same love and care we give our own.</li>
+    <li>📌 <strong>Trust:</strong> We are a dependable partner that pet owners can rely on.</li>
+    <li>📌 <strong>Excellence:</strong> We strive for the highest standards in pet care services</li>
+    <li>📌 <strong>Integrity:</strong> We are honest, transparent, and ethical in all our interactions.</li>
+    <li>📌 <strong>Community:</strong> We build strong relationships with pet lovers, owners, and local shelters.  </li>
+    <li>📌 <strong>Continuous Learning:</strong> We are always growing our knowledge to provide the best care possible.</li>
+  </ul>
+</div>
+<br><br>
+<div class="container">
+  <h2>🐾OUR PHILOSOPHY</h2>
+  <p>
+    We believe that pets are more than companions—they are family. 
+    Our philosophy centers on creating a stress-free, loving, 
+    and safe environment for every animal in our care. Whether it’s a routine walk, grooming session, 
+    veterinary support, or overnight stay, we are committed to offering personalized attention
+    and building trust with every wag, purr, or happy tail.
+  </p>
+</div>
+<br><br>
+<div class="container">
+  <h2>🐾OUR MISSION</h2>
+  <p>
+    To provide exceptional, compassionate, and trustworthy care for pets, 
+    while empowering pet owners with the tools, knowledge, and support they need to 
+    ensure their furry companions live happy, healthy lives.
+  </p>
+</div>
+<br><br>
+<div class="container">
+  <h2>🐾OUR VISION</h2>
+  <p>
+    To be the most loved and reliable pet care partner in the lives of pets and their owners 
+    creating a world where every pet receives the love, attention, and care they deserve.
+  </p>
+</div>
+<br><br><br>
+<section id="adoption">
+<h2>Checkout The Services We Offer</h2>
+</section>
+
+  <div class="container my-5">
+    <div class="row g-4">
+  
+      <!-- Adoption & Rescue -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100">
+          <img src="rescue.jpg" class="card-img-top" alt="Adoption & Rescue" />
+          <div class="card-body">
+            <h5 class="card-title">Adoption & Rescue</h5>
+            <p class="card-text">
+              Heartwarming stories and essential tips for rescuing and adopting pets.
+            </p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRescue">View Service</button>
+          </div>
+        </div>
+      </div>
+  
+<!-- Modal Template Example: Adoption & Rescue -->
+<div class="modal fade" id="modalRescue" tabindex="-1" aria-labelledby="modalRescueLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalRescueLabel">Adoption & Rescue</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <img src="rescue.jpg" class="img-fluid mb-3" alt="Adoption & Rescue" />
+        <p>Discover touching stories of rescued pets and get actionable guidance on how to adopt, care for, and transition rescued animals into loving homes.</p>
+
+        <!-- Appointment Form -->
+        <form>
+          <div class="mb-3">
+            <label for="nameRescue" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="nameRescue" placeholder="Enter your name" required />
+          </div>
+          <div class="mb-3">
+            <label for="emailRescue" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailRescue" placeholder="Enter your email" required />
+          </div>
+          <div class="mb-3">
+            <label for="dateRescue" class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" id="dateRescue" required />
+          </div>
+          <div class="mb-3">
+            <label for="messageRescue" class="form-label">Message (Optional)</label>
+            <textarea class="form-control" id="messageRescue" rows="3" placeholder="Any additional details..."></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-success" type="submit">Submit Appointment</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+  
+      <!-- Health & Wellness -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100">
+          <img src="wellness.jpg" class="card-img-top" alt="Health & Wellness" />
+          <div class="card-body">
+            <h5 class="card-title">Health & Wellness</h5>
+            <p class="card-text">
+              Vet-approved guides for a healthier, happier pet life.
+            </p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWellness">View Service</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal fade" id="modalWellness" tabindex="-1" aria-labelledby="modalWellnessLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalWellnessLabel">Health & Wellness</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+      
+            <div class="modal-body">
+              <img src="wellness.jpg" class="img-fluid mb-3" alt="Health & Wellness" />
+              <p>Vet-approved guides and consultations to ensure your pet’s health, fitness, and overall well-being.</p>
+      
+              <form>
+                <div class="mb-3">
+                  <label for="nameWellness" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="nameWellness" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="emailWellness" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="emailWellness" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="dateWellness" class="form-label">Preferred Date</label>
+                  <input type="date" class="form-control" id="dateWellness" required>
+                </div>
+                <div class="mb-3">
+                  <label for="messageWellness" class="form-label">Message (Optional)</label>
+                  <textarea class="form-control" id="messageWellness" rows="3"></textarea>
+                </div>
+              </form>
+            </div>
+      
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-success" type="submit">Submit Appointment</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+  
+      <!-- Training & Behaviour -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100">
+          <img src="training.jpg" class="card-img-top" alt="Training & Behaviour" />
+          <div class="card-body">
+            <h5 class="card-title">Training & Behaviour</h5>
+            <p class="card-text">
+              Expert advice to help you train and bond with your furry companion.
+            </p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTraining">View Service</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal fade" id="modalTraining" tabindex="-1" aria-labelledby="modalTrainingLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTrainingLabel">Training & Behaviour</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+      
+            <div class="modal-body">
+              <img src="training.jpg" class="img-fluid mb-3" alt="Training & Behaviour" />
+              <p>Expert-led strategies to improve obedience, correct behavioral issues, and foster a stronger bond with your pet.</p>
+      
+              <form>
+                <div class="mb-3">
+                  <label for="nameTraining" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="nameTraining" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="emailTraining" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="emailTraining" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="dateTraining" class="form-label">Preferred Date</label>
+                  <input type="date" class="form-control" id="dateTraining" required>
+                </div>
+                <div class="mb-3">
+                  <label for="messageTraining" class="form-label">Message (Optional)</label>
+                  <textarea class="form-control" id="messageTraining" rows="3"></textarea>
+                </div>
+              </form>
+            </div>
+      
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-success" type="submit">Submit Appointment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+      
+
+
+
+
+
+
+<div class="footer"
+  <p>&copy; 2025 Pet Care. All Rights Reserved.</p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    location.reload(); // Reload to reflect logout state
+  }
+
+  // Update navbar on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const user = localStorage.getItem("loggedInUser");
+    const userNavItem = document.getElementById("userNavItem");
+    const loginNavItem = document.getElementById("loginNavItem");
+    const userDropdown = document.getElementById("userDropdown");
+
+    if (user) {
+      loginNavItem.style.display = "none";
+      userNavItem.style.display = "block";
+      userDropdown.textContent = user;
+    } else {
+      loginNavItem.style.display = "block";
+      userNavItem.style.display = "none";
+    }
+  });
+</script>
+
+
+
+</body>
+
+</html>
